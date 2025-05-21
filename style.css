@@ -1,1 +1,54 @@
-/* Add you CSS here */
+/* Set a light blue background for the whole page */
+body {
+  background-color: #c3daf7; /* darker blue */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #10204e; /* darker blue for text */
+}
+
+/* Center everything in the header */
+header {
+  text-align: center;
+  background-color: #5c9ded; /* darker blue */
+  padding: 40px 0;
+}
+
+/* Style the main title */
+header h1 {
+  margin-bottom: 20px;
+  color: #0a3570; /* deeper blue */
+}
+
+/* Make the image circular and add a blue border */
+.circular-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%; /* makes the image round */
+  border: 6px solid #1856a8; /* darker blue border */
+  background-color: #fff;
+  display: block;
+  margin: 0 auto; /* center the image */
+}
+
+/* Style the About Me section */
+section {
+  /* No box, just center the text */
+  margin: 40px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Style the section title */
+section h2 {
+  color: #1856a8; /* darker blue */
+  margin-bottom: 12px;
+}
+
+/* Add style for the second section. The background should be a lighter shade of blue. */
+.second-section {
+    background-color: #b3d3f2; /* slightly darker blue */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(16, 32, 78, 0.15);
+}
