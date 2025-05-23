@@ -31,40 +31,45 @@ body {
 /* Header section with background image */
 .hero-section {
   /* Use the provided background image */
-  background-image: url('img/dark-blue-technology-background-free-vector.jpg');
+  background-image: url('img/hero-bg.jpg');
   background-size: cover; /* Make the image cover the header */
   background-position: center; /* Center the image */
   color: white; /* Make text white for good contrast */
-  text-align: center; /* Center the content */
-  padding: 50px 20px; /* Add space inside the header */
+  text-align: right; /* Align the hero-content group to the right */
+  padding: 60px 40px 60px 20px; /* More space on the right, less on the left */
+  min-height: 100vh; /* Make the hero section cover the whole screen */
 }
 
 /* Main title style */
 .hero-section h1 {
   color: #FFFFFF; /* White for best visibility on dark blue background */
-  margin-bottom: 20px;
+  padding: 60px 200px 60px 20px; /* More space on the right, less on the left */
+  /*margin-bottom: 20px;*/
 }
 
-/* Make the image circular and add a blue border */
-.circular-image {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%; /* makes the image round */
-  border: 6px solid #1856a8; /* darker blue border */
-  background-color: #fff;
-  display: block;
-  margin: 0 auto; /* center the image */
+/*
+  Add a container to group the image and text, and move them to the right while keeping the image centered above the text.
+  Students: You will need to update your HTML to wrap the image and h1 in a <div class="hero-content"> inside the hero-section.
+*/
+.hero-content {
+  display: inline-block;      /* Keep image and text together */
+  text-align: center;         /* Center image above text */
+  margin-right: 40px;         /* Add space from the right edge */
+  margin-top: 60px;           /* Add space from the top */
 }
 
-/* Circular image style */
+/* Center the image above the text inside the group */
 .circular-image {
   width: 150px;
   height: 150px;
   border-radius: 50%; /* Make the image round */
   border: 4px solid #CCCCCC; /* Light gray border */
   object-fit: cover; /* Make sure the image covers the circle */
-  margin-bottom: 20px;
+  margin-left: auto;  /* Center horizontally in the parent */
+  margin-right: auto; /* Center horizontally in the parent */
+  margin-bottom: 20px;        /* Only space below the image */
+  padding: 60px 200px 60px 20px; /* More space on the right, less on the left */
+  display: block;
 }
 
 /* Style the About Me section */
@@ -104,18 +109,4 @@ section h2 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(16, 32, 78, 0.15);
-}
-
-/* Style for the first section with a background image */
-.hero-section {
-  /* Set the background image */
-  background-image: url('img/dark-blue-technology-background-free-vector.jpg');
-  /* Make the background cover the whole section */
-  background-size: cover;
-  /* Center the background image */
-  background-position: center;
-  /* Add some padding to the section */
-  padding: 60px 20px;
-  /* Optional: Set text color to white for better contrast */
-  color: white;
 }
