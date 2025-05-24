@@ -67,26 +67,15 @@ body {
   border: 4px solid #CCCCCC; /* Light gray border */
   object-fit: cover; /* Make sure the image covers the circle */
   /* Center the image horizontally in the parent div */
-  margin: 180px auto 20px auto; /* Top: 0, Right: auto, Bottom: 20px, Left: auto */
+  margin: 100px auto 20px auto; /* Top: 0, Right: auto, Bottom: 20px, Left: auto */
   display: block;
-}
-
-/* Style the About Me section */
-section {
-  /* No box, just center the text */
-  margin: 40px auto;
-  max-width: 600px;
-  text-align: center;
 }
 
 /* About Me section styles */
 section {
   background-color: #FFFFFF; /* White background for the section */
   color: #333333; /* Dark gray text for easy reading */
-  max-width: 600px;
-  margin: 30px auto; /* Center the section */
   padding: 30px 20px;
-  border-radius: 10px; /* Rounded corners */
   box-shadow: 0 2px 8px rgba(100, 100, 100, 0.1); /* Soft gray shadow */
 }
 
@@ -94,18 +83,58 @@ section {
 section h2 {
   color: #1856a8; /* darker blue */
   margin-bottom: 12px;
+  text-align: center;
+
 }
 
-/* Section title style */
-section h2 {
-  color: #66CCFF; /* Light blue for section titles */
-  margin-bottom: 15px;
+
+/* Simple navigation bar at the top right */
+.top-nav {
+  width: 50%;                /* Only take up half the top */
+  margin-left: 50%;          /* Push to the right side */
+  background: #FFFFFF;       /* Light blue background for the nav bar */
+  text-align: right;         /* Align links to the right */
+  padding: 20px 40px 20px 0;    /* Space at the top and right */
+  position: absolute;        /* Stay at the top */
+  top: 0;
+  right: 0;
+  /* Add a triangle using clip-path for a sharp diagonal edge */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%);
+  box-shadow: 0 2px 8px rgba(16, 32, 78, 0.08); /* Soft shadow for nav bar */
 }
 
-/* Add style for the second section. The background should be a lighter shade of blue. */
-.second-section {
-    background-color: #b3d3f2; /* slightly darker blue */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(16, 32, 78, 0.15);
+.top-nav ul {
+  list-style: none;          /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+}
+
+.top-nav li {
+  display: inline;           /* Show links in a row */
+  margin-left: 100px;         /* Space between links */
+}
+
+.top-nav a {
+  text-decoration: none;     /* Remove underline */
+  color: #1856a8;            /* Blue color for links */
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.top-nav a:hover {
+  color: #0a3570;            /* Darker blue on hover */
+}
+
+/* Projects section styles */
+.projects-section {
+  background-color: #f0f6ff; /* Very light blue for a soft transition */
+  color: #10204e;            /* Dark blue text for readability */
+  padding: 30px 20px;        /* Same padding as About Me for consistency */
+  /* No border or shadow for a seamless look */
+}
+
+/* Style the Projects section title */
+.projects-section h2 {
+  color: #1856a8; /* Match the blue used in other section titles */
+  margin-bottom: 12px;
 }
