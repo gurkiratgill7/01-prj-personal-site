@@ -31,20 +31,21 @@ body {
 /* Header section with background image */
 .hero-section {
   /* Use the provided background image */
-  background-image: url('img/hero-bg.jpg');
+  background-image: url('img/hero-bg.png');
   background-size: cover; /* Make the image cover the header */
   background-position: center; /* Center the image */
+  /*background-repeat: no-repeat; /* Do not repeat the image */
   color: white; /* Make text white for good contrast */
   text-align: right; /* Align the hero-content group to the right */
-  padding: 60px 40px 60px 20px; /* More space on the right, less on the left */
-  min-height: 100vh; /* Make the hero section cover the whole screen */
+  padding: 60px 40px 60px 20px; /* Standard space at the top and bottom */
+  height: calc(100vh - 110px); /* Make the hero section cover the whole screen */
 }
 
 /* Main title style */
 .hero-section h1 {
   color: #FFFFFF; /* White for best visibility on dark blue background */
-  padding: 60px 200px 60px 20px; /* More space on the right, less on the left */
-  /*margin-bottom: 20px;*/
+  padding: 20px 0 0 0; /* Only space above the text, no extra right padding */
+  margin-bottom: 20px;
 }
 
 /*
@@ -54,21 +55,19 @@ body {
 .hero-content {
   display: inline-block;      /* Keep image and text together */
   text-align: center;         /* Center image above text */
-  margin-right: 40px;         /* Add space from the right edge */
-  margin-top: 60px;           /* Add space from the top */
+  margin-right: 300px;        /* Add space from the right edge so it's not flush */
+  margin-top: 100px;          /* Push the group down by 100px */
 }
 
 /* Center the image above the text inside the group */
 .circular-image {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%; /* Make the image round */
   border: 4px solid #CCCCCC; /* Light gray border */
   object-fit: cover; /* Make sure the image covers the circle */
-  margin-left: auto;  /* Center horizontally in the parent */
-  margin-right: auto; /* Center horizontally in the parent */
-  margin-bottom: 20px;        /* Only space below the image */
-  padding: 60px 200px 60px 20px; /* More space on the right, less on the left */
+  /* Center the image horizontally in the parent div */
+  margin: 180px auto 20px auto; /* Top: 0, Right: auto, Bottom: 20px, Left: auto */
   display: block;
 }
 
