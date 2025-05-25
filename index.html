@@ -5,6 +5,8 @@
   <title>My Personal Site</title>
   <!-- Link to the CSS file -->
   <link rel="stylesheet" href="style.css">
+  <!-- Add Font Awesome link in the head -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <!-- Navigation bar at the top right -->
@@ -12,7 +14,7 @@
     <ul>
       <li><a href="#about">About Me</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -30,7 +32,7 @@
     <!-- You can add more content here if needed -->
   </header>
   <!-- About Me section -->
-  <section>
+  <section id="about">
     <h2>About Me</h2>
     <p>My name is Gurkirat Gill, a Computer Science student at George Mason University.
       I am Software Engineer and Web Developer based in Northern Virginia.
@@ -46,15 +48,81 @@
   </section>
 
   <!-- Projects section -->
-  <section class="projects-section">
+  <section class="projects-section" id="projects">
     <h2>Projects</h2>
-    <p>Here are some of my favorite projects:</p>
-    <ul>
-      <li>Personal Portfolio Website</li>
-      <li>Weather App using JavaScript</li>
-      <li>Simple To-Do List</li>
-      <li>AI Chatbot Demo</li>
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <details class="project-card">
+        <summary>
+          <h3>Personal Portfolio Website</h3>
+          <p>A simple website to showcase my work and skills.</p>
+          <span class="expand-cue">Click to expand</span>
+        </summary>
+        <div>
+          <p>The website you are on right now. Made using HTML, CSS, and JavaScript.</p>
+        </div>
+      </details>
+      <!-- Project 2 -->
+      <details class="project-card">
+        <summary>
+          <h3>Study-AId</h3>
+          <p>An AI-driven study helper for students.</p>
+          <span class="expand-cue">Click to expand</span>
+        </summary>
+        <div>
+          <p>This app uses AI to generate summaries, flashcards, and questions based on PDF notes provided by students. Made using Flask and Python for back-end and HTML, CSS, and JavaScript for front-end. Uses Firestore for database storage and Firebase for user authentication.</p>
+        </div>
+      </details>
+      <!-- Project 3 -->
+      <details class="project-card">
+        <summary>
+          <h3>Outbreak AI</h3>
+          <p>Uses AI to predict chances of outbreaks.</p>
+          <span class="expand-cue">Click to expand</span>
+        </summary>
+        <div>
+          <p>Analyze CDC's NNDSS database using AI to predict the likelihood of the outbreak of a certain infectious disease. Uses Python and Flask for back-end. Front-end uses HTML, CSS, leaflet.js, charts.js, and JavaScript.</p>
+        </div>
+      </details>
+      <!-- Project 4 -->
+      <details class="project-card">
+        <summary>
+          <h3>Task Manager</h3>
+          <p>A functional Task Manager that allows users to run commands.</p>
+          <span class="expand-cue">Click to expand</span>
+        </summary>
+        <div>
+          <p>A task manager that allows users to provide commands that can be executed in the foreground and background. Also allows users to use keyboard shortcuts to send signals. Written entirely in C.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Skills section -->
+  <section class="skills-section" id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li><i class="fab fa-html5"></i> HTML</li>
+      <li><i class="fab fa-css3-alt"></i> CSS</li>
+      <li><i class="fab fa-js"></i> JavaScript</li>
+      <li><i class="fab fa-python"></i> Python</li>
+      <li><i class="fas fa-flask"></i> Flask</li>
+      <li><i class="fab fa-java"></i> Java</li>
+      <li><i class="fas fa-code"></i> C</li>
     </ul>
+  </section>
+
+  <!-- Contact section -->
+  <section class="contact-section" id="contact">
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <a href="mailto:kirat.g@icloud.com" class="contact-link">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/gurkiratgill7" class="contact-link">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
   </section>
 </body>
 </html>

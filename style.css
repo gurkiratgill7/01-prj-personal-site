@@ -7,6 +7,10 @@ body {
   color: #10204e; /* darker blue for text */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Center everything in the header */
 header {
   text-align: center;
@@ -90,17 +94,18 @@ section h2 {
 
 /* Simple navigation bar at the top right */
 .top-nav {
-  width: 50%;                /* Only take up half the top */
+  width: 45%;                /* Only take up half the top */
   margin-left: 50%;          /* Push to the right side */
   background: #FFFFFF;       /* Light blue background for the nav bar */
   text-align: right;         /* Align links to the right */
   padding: 20px 40px 20px 0;    /* Space at the top and right */
-  position: absolute;        /* Stay at the top */
+  position: fixed;        /* Stay at the top */
   top: 0;
   right: 0;
   /* Add a triangle using clip-path for a sharp diagonal edge */
   clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%);
   box-shadow: 0 2px 8px rgba(16, 32, 78, 0.08); /* Soft shadow for nav bar */
+  z-index: 1000;
 }
 
 .top-nav ul {
@@ -111,7 +116,7 @@ section h2 {
 
 .top-nav li {
   display: inline;           /* Show links in a row */
-  margin-left: 100px;         /* Space between links */
+  margin: 40px;         /* Space between links */
 }
 
 .top-nav a {
@@ -125,16 +130,175 @@ section h2 {
   color: #0a3570;            /* Darker blue on hover */
 }
 
+#about,
+#projects,
+#skills,
+#contact {
+  scroll-margin-top: 75px;
+}
+
 /* Projects section styles */
 .projects-section {
   background-color: #f0f6ff; /* Very light blue for a soft transition */
   color: #10204e;            /* Dark blue text for readability */
-  padding: 30px 20px;        /* Same padding as About Me for consistency */
-  /* No border or shadow for a seamless look */
+  padding: 30px 20px;
 }
 
-/* Style the Projects section title */
-.projects-section h2 {
-  color: #1856a8; /* Match the blue used in other section titles */
-  margin-bottom: 12px;
+.projects-grid {
+  display: flex;                /* Use flexbox for a simple grid */
+  flex-wrap: wrap;              /* Allow cards to wrap to next line */
+  gap: 20px;                    /* Space between cards */
+  justify-content: center;      /* Center the grid */
+  margin-top: 20px;
+}
+
+.project-card {
+  background: #fff;             /* White background for cards */
+  border: 1px solid #d0e3fa;    /* Light blue border */
+  border-radius: 10px;          /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(16, 32, 78, 0.08); /* Soft shadow */
+  padding: 20px;
+  width: 220px;                 /* Fixed width for simple grid */
+  cursor: pointer;              /* Show pointer on hover */
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+  margin: 0;                    /* Remove default margins */
+  flex: 0 0 auto; /* Prevent cards from resizing */
+  overflow: hidden; /* Hide overflowing content */
+  height: 150px; /* Set a fixed height for all cards */
+}
+
+/* Ensure only the selected project card expands vertically */
+.project-card[open] {
+  height: auto; /* Allow the selected card to expand vertically */
+  overflow: visible; /* Show content of the expanded card */
+}
+
+.project-card div {
+  margin-top: 15px;             /* Space between summary and content */
+  padding-top: 15px;            /* Add padding above content */
+  border-top: 1px solid #d0e3fa; /* Add a separator line */
+}
+
+.project-card summary {
+  list-style: none;             /* Keep default arrow styling */
+  position: relative;           /* Make this a positioning context */
+}
+
+.project-card:hover {
+  transform: translateY(-5px);  /* Lift effect on hover */
+  box-shadow: 0 6px 16px rgba(16, 32, 78, 0.15);
+}
+
+/* Style the expand cue */
+.expand-cue {
+  font-size: 12px;          /* Small text */
+  color: #1856a8;           /* Match the site's blue color */
+  font-style: italic;       /* Italic for emphasis */
+  display: block;           /* Ensure it appears on a new line */
+  margin-top: 5px;          /* Add some space above the cue */
+}
+
+/* Add a hover effect to the summary */
+.project-card summary:hover {
+  background-color: #f0f6ff; /* Light blue background on hover */
+  cursor: pointer;           /* Show pointer to indicate interactivity */
+  border-radius: 5px;        /* Slight rounding for a polished look */
+  padding: 5px;              /* Add some padding for better visibility */
+}
+
+/* Popup styles */
+.project-popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  max-width: 350px;
+  width: 90%;
+  box-shadow: 0 4px 16px rgba(16, 32, 78, 0.18);
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  color: #1856a8;
+  cursor: pointer;
+}
+
+/* Skills section styles */
+.skills-section {
+  background-color: #fff; /* White background like About Me */
+  color: #10204e;         /* Dark blue text for readability */
+  padding: 30px 20px;
+  box-shadow: 0 2px 8px rgba(100, 100, 100, 0.1); /* Soft shadow */
+  text-align: center;     /* Center the content */
+}
+
+.skills-section h2 {
+  color: #1856a8;         /* Blue section title */
+  margin-bottom: 18px;
+}
+
+.skills-list {
+  list-style: none;       /* Remove bullet points */
+  padding: 0;
+  margin: 0 auto;
+  display: flex;          /* Display skills in a row */
+  flex-wrap: wrap;        /* Wrap to next line if needed */
+  justify-content: center;/* Center the skills */
+  gap: 40px;              /* Space between skills */
+}
+
+.skills-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  color: #1856a8;
+}
+
+.skills-list i {
+  font-size: 36px;        /* Make icons larger */
+  margin-bottom: 8px;     /* Space below icon */
+  color: #1856a8;         /* Blue icons */
+}
+
+/* Contact section styles */
+.contact-section {
+  background-color: #f0f6ff; /* Match the Projects section background */
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(100, 100, 100, 0.1);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.contact-link {
+  color: #1856a8;
+  font-size: 32px;
+  text-decoration: none;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.contact-link:hover {
+  color: #0a3570;
+  transform: translateY(-5px);
 }
