@@ -44,9 +44,11 @@ body {
   padding: 60px 40px 60px 20px; /* Standard space at the top and bottom */
   height: calc(100vh - 110px); /* Make the hero section cover the whole screen */
 }
+
 .name{
-  font-family: Brush Script MT, Brush Script Std, cursive;
-  font-size: 4.5em;
+  font-family: 'Pacifico', cursive;
+  font-size: 3em;
+  padding-top: 100px;
 }
 
 /* Main title style */
@@ -63,7 +65,7 @@ body {
 .hero-content {
   display: inline-block;      /* Keep image and text together */
   text-align: center;         /* Center image above text */
-  margin-right: 150px;        /* Add space from the right edge so it's not flush */
+  margin-right: 125px;        /* Add space from the right edge so it's not flush */
   margin-top: 100px;          /* Push the group down by 100px */
 }
 
